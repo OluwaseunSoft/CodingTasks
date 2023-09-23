@@ -11,12 +11,8 @@ namespace CodingTasks.SumEvenNumbersFromIntArray
         public static int SumEven(int[] numbers)
         {
             Console.WriteLine("Question : Given an array of ints, write a C# method to total all the values that are even numbers.");
-            int totalSum = 0;
-            foreach (var item in numbers)
-            {
-                if(item % 2 == 0) totalSum += item;
-            }
-            return totalSum;
+
+            return numbers.Where(x => x % 2 == 0).Sum();
         }
     }
 }
