@@ -9,6 +9,8 @@ namespace CodingTasks.AlphabetPositionString
     internal class AlphabetPositionString
     {
         public static int num = 31;
+
+        //int d = Convert.ToInt32('E');        Console.WriteLine((d % 32).ToString());
         public static int PositionAlphabet(string s, int n)
         {
             Console.WriteLine("Question : Write a C# Sharp program that returns the sum all the characters with their respective numbers from a string.");
@@ -27,7 +29,7 @@ namespace CodingTasks.AlphabetPositionString
             Console.WriteLine("Question : Write a C# Sharp program that returns the sum all the characters with their respective numbers from a string.");
 
             return s.ToLower().Where(x => Char.IsLetter(x))
-                .Select(x => (int)x % 32).ToArray().Sum();
+                .Select(x => x % 32).ToArray().Sum();
         }
 
     }
