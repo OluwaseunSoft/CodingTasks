@@ -10,5 +10,6 @@ int[] numbers = new int[] { 23, 22, 67, 89, 9, 76, 66 };
 
 string str = "Turing";
 int n = str.Length;
-Console.WriteLine("Sum of the characters with their respective numbers from a string : {0}", AlphabetPositionString.PositionAlphabet(str).ToString());
+int num = 2;
+Console.WriteLine("Sum of the characters with their respective numbers from a string : {0}", AlphabetPositionString.PositionAlphabet2(str, num).ToString());
 

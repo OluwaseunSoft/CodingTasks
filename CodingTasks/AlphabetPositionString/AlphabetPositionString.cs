@@ -24,7 +24,7 @@ namespace CodingTasks.AlphabetPositionString
             return ans;
         }
 
-        public static int PositionAlphabet(string s)
+        public static int PositionAlphabet2(string s, int n)
         {
             Console.WriteLine("Question : Write a C# Sharp program that returns the sum all the characters with their respective numbers from a string.");
 
