@@ -28,8 +28,18 @@ namespace CodingTasks.AlphabetPositionString
         {
             Console.WriteLine("Question : Write a C# Sharp program that returns the sum all the characters with their respective numbers from a string.");
 
-            return s.ToLower().Where(x => Char.IsLetter(x))
-                .Select(x => x % 32).ToArray().Sum();
+            var r = s.ToLower().Where(x => Char.IsLetter(x))
+               .Select(x => x % 32).ToArray();
+            var str = String.Join("", r);
+            int result = 0;
+            if (Int32.TryParse(str, out result))
+            {
+                for (int i = 1; i <= n; i++)
+                {
+
+                }
+            }
+            return -1;
         }
 
     }
