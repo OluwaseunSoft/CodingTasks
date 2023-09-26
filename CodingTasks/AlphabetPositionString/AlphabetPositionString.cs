@@ -8,23 +8,9 @@ namespace CodingTasks.AlphabetPositionString
 {
     internal class AlphabetPositionString
     {
-        public static int num = 31;
+        public static int num = 31;        
 
-        //int d = Convert.ToInt32('E');        Console.WriteLine((d % 32).ToString());
         public static int PositionAlphabet(string s, int n)
-        {
-            Console.WriteLine("Question : Write a C# Sharp program that returns the sum all the characters with their respective numbers from a string.");
-            int ans = 0;
-            for (int i = 0; i < n; i++)
-            {
-                Console.WriteLine((s[i] & num) + " ");
-                ans += (s[i] & num);
-            }
-
-            return ans;
-        }
-
-        public static int PositionAlphabet2(string s, int n)
         {
             Console.WriteLine("Question : Write a C# Sharp program that returns the sum all the characters with their respective numbers from a string.");
 
@@ -32,14 +18,20 @@ namespace CodingTasks.AlphabetPositionString
                .Select(x => x % 32).ToArray();
             var str = String.Join("", r);
             int result = 0;
-            if (Int32.TryParse(str, out result))
-            {
-                for (int i = 1; i <= n; i++)
-                {
 
+            
+
+            for (int i = 1; i <= n; i++)
+            {
+                for (int j = 0; j < str.Length; j++)
+                {
+                    result += Int32.Parse(str[j].ToString());
                 }
+                str = result.ToString();
+                result = 0;
             }
-            return -1;
+
+            return Int32.Parse(str.ToString());
         }
 
     }

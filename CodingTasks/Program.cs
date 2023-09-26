@@ -8,8 +8,5 @@ int[] numbers = new int[] { 23, 22, 67, 89, 9, 76, 66 };
 
 //FindTheMaxSum.MaxInt(15, 5);
 
-string str = "Turing";
-int n = str.Length;
-int num = 2;
-Console.WriteLine("Sum of the characters with their respective numbers from a string : {0}", AlphabetPositionString.PositionAlphabet2(str, num).ToString());
+Console.WriteLine("Sum of the characters with their respective numbers from a string : {0}", AlphabetPositionString.PositionAlphabet("turing", 2).ToString());
 
