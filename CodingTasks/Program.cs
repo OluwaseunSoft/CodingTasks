@@ -14,5 +14,5 @@ string s = "abcde";
 int chunk = 2;
 var tokens = SplitStringIntoEqualChunks.ChunkMethod(s, chunk);
 
-Console.WriteLine(String.Join(", ", tokens));
+Console.WriteLine(String.Join(",", tokens));
 

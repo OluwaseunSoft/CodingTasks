@@ -30,7 +30,7 @@ namespace CodingTasks.SplitStringIntoEqualChunks
 
         public static IEnumerable<string> ChunkMethod(string str, int chunkSize)
         {
-            return str.Chunk(chunkSize).Select(s => new string(s)).ToList();
+            return str.Chunk(chunkSize).Select(s => new string(s)).ToArray();
         }
     }
 }
