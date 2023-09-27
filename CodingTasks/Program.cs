@@ -10,5 +10,9 @@ int[] numbers = new int[] { 23, 22, 67, 89, 9, 76, 66 };
 //FindTheMaxSum.MaxInt(15, 5);
 
 //Console.WriteLine("Sum of the characters with their respective numbers from a string : {0}", AlphabetPositionString.PositionAlphabet("turing", 2).ToString());
-Console.WriteLine("s='abcde', chunks=2 : {0}", SplitStringIntoEqualChunks.ChunkSplit("abcde", 2));
+string s = "abcde";
+int chunk = 2;
+var tokens = SplitStringIntoEqualChunks.ChunkMethod(s, chunk);
+
+Console.WriteLine(String.Join(", ", tokens));
 
