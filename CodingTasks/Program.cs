@@ -17,5 +17,6 @@ int[] numbers = new int[] { 23, 22, 67, 89, 9, 76, 66 };
 //Console.WriteLine(String.Join(",", tokens));
 
 List<string> ops = new List<string> { "5", "2", "C", "D", "+" };
-ScoreRecordWithRules.SumScore(ops);
+Console.WriteLine(ScoreRecordWithRules.SumScore(ops).ToString());
+
 
