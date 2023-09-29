@@ -16,7 +16,11 @@ int[] numbers = new int[] { 23, 22, 67, 89, 9, 76, 66 };
 
 //Console.WriteLine(String.Join(",", tokens));
 
-List<string> ops = new List<string> { "5", "2", "C", "D", "+" };
-Console.WriteLine(ScoreRecordWithRules.SumScore(ops).ToString());
+//List<string> ops = new List<string> { "5", "2", "C", "D", "+" };
+//Console.WriteLine(ScoreRecordWithRules.SumScore(ops).ToString());
+
+var tokens = SplitStringIntoEqualChunks.ChunkMethod("abcde", 2);
+
+Console.WriteLine(String.Join(",", tokens));
 
 
