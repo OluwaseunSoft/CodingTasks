@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using CodingTasks.AlphabetPositionString;
+using CodingTasks.BinaryOutput;
 using CodingTasks.FindTheMaxInt;
 using CodingTasks.ScoreRecordWithRules;
 using CodingTasks.SplitStringIntoEqualChunks;
@@ -19,7 +20,7 @@ int[] numbers = new int[] { 23, 22, 67, 89, 9, 76, 66 };
 //List<string> ops = new List<string> { "5", "2", "C", "D", "+" };
 //Console.WriteLine(ScoreRecordWithRules.SumScore(ops).ToString());
 
-var tokens = SplitStringIntoEqualChunks.ChunkMethod("abcde", 2);
+var tokens = BinaryOutput.BinaryFigure(7);
 
 Console.WriteLine(String.Join(",", tokens));
 
