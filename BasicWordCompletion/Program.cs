@@ -1,3 +1,5 @@
+using BasicWordCompletion.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -21,19 +23,27 @@ var summaries = new[]
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
 };
 
-app.MapGet("/weatherforecast", () =>
+app.MapGet("/GetWord", async (string stem) =>
 {
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateTime.Now.AddDays(index),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+    if (stem == " " || stem == null)
+    {
+        var forecast = new Response
+        {
+            Data = summaries.ToArray()
+        };
+        return Results.Ok(forecast);
+    }
+    else
+    {
+        var forecast = new Response
+        {
+            Data = summaries.Where(x => x.ToLower().StartsWith(stem.ToLower())).ToArray()
+        };
+        if (forecast.Data.Length < 1) return Results.NotFound();
+        return Results.Ok(forecast);
+    }
+
+});
 
 app.Run();
 
