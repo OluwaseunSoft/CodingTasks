@@ -21,13 +21,15 @@ app.UseHttpsRedirection();
 
 app.MapGet("/GetWord", async (string stem, IHttpClientFactory httpClientFactory) =>
 {
-    var request = new HttpRequestMessage(HttpMethod.Get, "https://raw.githubusercontent.com/qualified/challenge-data/master/words_alpha.txt");
-    var httpClient = httpClientFactory.CreateClient();
-    var response = await httpClient.SendAsync(request);
-    var d = await response.Content.ReadAsStringAsync();
-    var summaries = d.Split('\n');
-
-    if (stem == " " || stem == null)
+    if (summaries == null)
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "https://raw.githubusercontent.com/qualified/challenge-data/master/words_alpha.txt");
+        var httpClient = httpClientFactory.CreateClient();
+        var response = await httpClient.SendAsync(request);
+        var d = response.Content.ReadAsStringAsync().Result;
+        summaries = d.Split('\n');
+    }
+    if (stem == " " || stem == null || stem == "")
     {
         var forecast = new Response
         {
@@ -49,7 +51,7 @@ app.MapGet("/GetWord", async (string stem, IHttpClientFactory httpClientFactory)
 
 app.Run();
 
-internal record WeatherForecast(DateTime Date, int TemperatureC, string? Summary)
+partial class Program
 {
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    static string[]? summaries;
 }
