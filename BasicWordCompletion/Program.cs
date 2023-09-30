@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 
@@ -18,13 +19,14 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
+app.MapGet("/GetWord", async (string stem, IHttpClientFactory httpClientFactory) =>
 {
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+    var request = new HttpRequestMessage(HttpMethod.Get, "https://raw.githubusercontent.com/qualified/challenge-data/master/words_alpha.txt");
+    var httpClient = httpClientFactory.CreateClient();
+    var response = await httpClient.SendAsync(request);
+    var d = await response.Content.ReadAsStringAsync();
+    var summaries = d.Split('\n');
 
-app.MapGet("/GetWord", async (string stem) =>
-{
     if (stem == " " || stem == null)
     {
         var forecast = new Response
