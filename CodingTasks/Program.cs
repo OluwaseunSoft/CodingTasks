@@ -24,4 +24,26 @@ var tokens = BinaryOutput.BinaryFigure(7);
 
 Console.WriteLine(String.Join(",", tokens));
 
+//
+//Console.WriteLine(d);
+//string s = "red2 blue5 black4 green1 gold3";
+//var space = s.Split(' ');
+//Dictionary<int, string> dic = new Dictionary<int, string>();
+//foreach(var item in space)
+//{
+//    var num = item[item.Length - 1].ToString();
+//    var subString = item.Substring(0, item.Length - 1);
+//    dic.Add(Convert.ToInt16(num), subString);
+//}
+
+//var de = dic.OrderBy(k=>k.Key);
+
+//string res = "";
+//foreach(var item in de)
+//{
+//    res = res + item.Value.ToString();
+//    res = res + " ";
+//}
+//Console.WriteLine(res.Trim());
+
 
