@@ -2,6 +2,7 @@
 using CodingTasks.AlphabetPositionString;
 using CodingTasks.BinaryOutput;
 using CodingTasks.FindTheMaxInt;
+using CodingTasks.OrderOfStringsAndNumbers;
 using CodingTasks.ScoreRecordWithRules;
 using CodingTasks.SplitStringIntoEqualChunks;
 using CodingTasks.SumEvenNumbersFromIntArray;
@@ -20,12 +21,12 @@ int[] numbers = new int[] { 23, 22, 67, 89, 9, 76, 66 };
 //List<string> ops = new List<string> { "5", "2", "C", "D", "+" };
 //Console.WriteLine(ScoreRecordWithRules.SumScore(ops).ToString());
 
-var tokens = BinaryOutput.BinaryFigure(7);
+//var tokens = BinaryOutput.BinaryFigure(7);
+//Console.WriteLine(String.Join(",", tokens));
 
-Console.WriteLine(String.Join(",", tokens));
 
-
-//string s = "red2 blue5 black4 green1 gold3";
+string s = "red2 blue5 black4 green1 gold3";
+Console.WriteLine("{0}", OrderOfStringsAndNumbers.OrderOfStrings(s));
 
 
 

@@ -8,7 +8,7 @@ namespace CodingTasks.OrderOfStringsAndNumbers
 {
     internal class OrderOfStringsAndNumbers
     {
-        public string OrderOfStrings(string s)
+        public static string OrderOfStrings(string s)
         {
             var space = s.Split(' ');
             Dictionary<int, string> dic = new Dictionary<int, string>();
