@@ -19,6 +19,7 @@ namespace CodingTasks.JsonCleansing
                 string na = "N/A", dash = "-", null1 = "";
 
                 var newResult = new JsonObject();
+
                 newResult["name"] = new JsonObject();
 
                 if (results.name.first != na && results.name.first != dash && results.name.first != null1)
@@ -51,7 +52,17 @@ namespace CodingTasks.JsonCleansing
                     {
                         newResult["hobbies"].AsArray().Add<string>(results.hobbies[i].ToString());
                     }
-                }     
+                }
+
+                newResult["education"] = new JsonObject();
+                if (results.education.highschool != na && results.education.highschool != dash && results.education.highschool != null1)
+                {
+                    newResult["education"]!["highschool"] = results.education.highschool;
+                }
+                if (results.education.college != na && results.education.college != dash && results.education.college != null1)
+                {
+                    newResult["education"]!["college"] = results.education.college;
+                }
 
                 var options = new JsonSerializerOptions { WriteIndented = true };
                 Console.WriteLine("Cleansed Json Task From https://coderbyte.com/api/challenges/json/json-cleaning : {0}", newResult.ToJsonString(options));
