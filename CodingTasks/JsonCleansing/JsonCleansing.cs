@@ -50,7 +50,7 @@ namespace CodingTasks.JsonCleansing
                 {
                     if (results.hobbies[i].ToString() != na && results.hobbies[i].ToString() != dash && results.hobbies[i].ToString() != null1)
                     {
-                        newResult["hobbies"].AsArray().Add<string>(results.hobbies[i].ToString());
+                        newResult["hobbies"]?.AsArray().Add<string>(results.hobbies[i].ToString());
                     }
                 }
 
