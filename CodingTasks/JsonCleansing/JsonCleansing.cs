@@ -6,7 +6,7 @@ namespace CodingTasks.JsonCleansing
 {
     internal class JsonCleansing
     {
-        public static string CleansedJson()
+        public static void CleansedJson()
         {
             var client = new HttpClient();
             var request = new HttpRequestMessage(HttpMethod.Get, "https://coderbyte.com/api/challenges/json/json-cleaning");
@@ -18,7 +18,7 @@ namespace CodingTasks.JsonCleansing
 
             var newResult = new JsonObject();
             newResult["name"] = new JsonObject();
-           // newResult["hobbies"] = new JsonArray()[3];
+            // newResult["hobbies"] = new JsonArray()[3];
             if (results.name.first != na && results.name.first != dash && results.name.first != null1)
             {
                 newResult["name"]!["first"] = results.name.first;
@@ -42,20 +42,17 @@ namespace CodingTasks.JsonCleansing
                 newResult["DOB"] = results.DOB;
             }
 
-            string[] test1 = new string[results.hobbies.Length];
+            string[] temp = new string[] { };
+            List<string> temp2 = new List<string>();
             for (int i = 0; i < results.hobbies.Length; i++)
             {
-
                 if (results.hobbies[i].ToString() != na && results.hobbies[i].ToString() != dash && results.hobbies[i].ToString() != null1)
                 {
-                    int num = 1;
-                    test1[i] = results.hobbies[i].ToString();
-                    newResult["hobbies"] = results.hobbies[i].ToString();
-                    //newResult["hobbies"][num] = results.hobbies[i].ToString();
-                    num++;
+                    temp[i] = results.hobbies[i].ToString();
+                    temp2.Add(results.hobbies[i].ToString());
                 }
             }
-
+            newResult["hobbies"] = new JsonArray { temp.ToArray() };
 
             var forecastObject = new JsonObject
             {
@@ -85,8 +82,7 @@ namespace CodingTasks.JsonCleansing
             forecastObject["Date"] = new DateTime(2019, 8, 3);
 
             var options = new JsonSerializerOptions { WriteIndented = true };
-            Console.WriteLine(newResult.ToJsonString(options));
-            return "";
+            Console.WriteLine("Cleansed Json Task From https://coderbyte.com/api/challenges/json/json-cleaning : {0}", newResult.ToJsonString(options));
         }
     }
 
