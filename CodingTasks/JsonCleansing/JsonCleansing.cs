@@ -8,81 +8,58 @@ namespace CodingTasks.JsonCleansing
     {
         public static void CleansedJson()
         {
-            var client = new HttpClient();
-            var request = new HttpRequestMessage(HttpMethod.Get, "https://coderbyte.com/api/challenges/json/json-cleaning");
-            var response = client.Send(request);
-            response.EnsureSuccessStatusCode();
-            var results = JsonConvert.DeserializeObject<RootObject>(response.Content.ReadAsStringAsync().Result);
+            try
+            {
+                var client = new HttpClient();
+                var request = new HttpRequestMessage(HttpMethod.Get, "https://coderbyte.com/api/challenges/json/json-cleaning");
+                var response = client.Send(request);
+                response.EnsureSuccessStatusCode();
+                var results = JsonConvert.DeserializeObject<RootObject>(response.Content.ReadAsStringAsync().Result);
 
-            string na = "N/A", dash = "-", null1 = "";
+                string na = "N/A", dash = "-", null1 = "";
 
-            var newResult = new JsonObject();
-            newResult["name"] = new JsonObject();
-            // newResult["hobbies"] = new JsonArray()[3];
-            if (results.name.first != na && results.name.first != dash && results.name.first != null1)
-            {
-                newResult["name"]!["first"] = results.name.first;
-            }
-            if (results.name.middle != na && results.name.middle != dash && results.name.middle != null1)
-            {
-                newResult["name"]!["middle"] = results.name.middle;
-            }
-            if (results.name.last != na && results.name.last != dash && results.name.last != null1)
-            {
-                newResult["name"]!["last"] = results.name.last;
-            }
+                var newResult = new JsonObject();
+                newResult["name"] = new JsonObject();
 
-            if (results.age.ToString() != na && results.age.ToString() != dash && results.age.ToString() != null1)
-            {
-                newResult["age"] = results.age;
-            }
-
-            if (results.DOB.ToString() != na && results.DOB.ToString() != dash && results.DOB.ToString() != null1)
-            {
-                newResult["DOB"] = results.DOB;
-            }
-
-            string[] temp = new string[] { };
-            List<string> temp2 = new List<string>();
-            for (int i = 0; i < results.hobbies.Length; i++)
-            {
-                if (results.hobbies[i].ToString() != na && results.hobbies[i].ToString() != dash && results.hobbies[i].ToString() != null1)
+                if (results.name.first != na && results.name.first != dash && results.name.first != null1)
                 {
-                    temp[i] = results.hobbies[i].ToString();
-                    temp2.Add(results.hobbies[i].ToString());
+                    newResult["name"]!["first"] = results.name.first;
                 }
-            }
-            newResult["hobbies"] = new JsonArray { temp.ToArray() };
-
-            var forecastObject = new JsonObject
-            {
-                ["Date"] = new DateTime(2019, 8, 1),
-                ["Temperature"] = 25,
-                ["Summary"] = "Hot",
-                ["DatesAvailable"] = new JsonArray(
-            new DateTime(2019, 8, 1), new DateTime(2019, 8, 2)),
-                ["TemperatureRanges"] = new JsonObject
+                if (results.name.middle != na && results.name.middle != dash && results.name.middle != null1)
                 {
-                    ["Cold"] = new JsonObject
+                    newResult["name"]!["middle"] = results.name.middle;
+                }
+                if (results.name.last != na && results.name.last != dash && results.name.last != null1)
+                {
+                    newResult["name"]!["last"] = results.name.last;
+                }
+
+                if (results.age.ToString() != na && results.age.ToString() != dash && results.age.ToString() != null1)
+                {
+                    newResult["age"] = results.age;
+                }
+
+                if (results.DOB.ToString() != na && results.DOB.ToString() != dash && results.DOB.ToString() != null1)
+                {
+                    newResult["DOB"] = results.DOB;
+                }
+                
+                newResult["hobbies"] = new JsonArray();
+                for (int i = 0; i < results.hobbies.Length; i++)
+                {
+                    if (results.hobbies[i].ToString() != na && results.hobbies[i].ToString() != dash && results.hobbies[i].ToString() != null1)
                     {
-                        ["High"] = 20,
-                        ["Low"] = -10
+                        newResult["hobbies"].AsArray().Add<string>(results.hobbies[i].ToString());
                     }
-                },
-                ["SummaryWords"] = new JsonArray("Cool", "Windy", "Humid")
-            };
-            // Add an object.
-            forecastObject!["TemperatureRanges"]!["Hot"] =
-                new JsonObject { ["High"] = 60, ["Low"] = 20 };
+                }     
 
-            // Remove a property.
-            forecastObject.Remove("SummaryWords");
-
-            // Change the value of a property.
-            forecastObject["Date"] = new DateTime(2019, 8, 3);
-
-            var options = new JsonSerializerOptions { WriteIndented = true };
-            Console.WriteLine("Cleansed Json Task From https://coderbyte.com/api/challenges/json/json-cleaning : {0}", newResult.ToJsonString(options));
+                var options = new JsonSerializerOptions { WriteIndented = true };
+                Console.WriteLine("Cleansed Json Task From https://coderbyte.com/api/challenges/json/json-cleaning : {0}", newResult.ToJsonString(options));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
     }
 
