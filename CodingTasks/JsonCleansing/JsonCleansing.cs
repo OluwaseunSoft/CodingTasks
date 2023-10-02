@@ -18,7 +18,7 @@ namespace CodingTasks.JsonCleansing
 
             var newResult = new JsonObject();
             newResult["name"] = new JsonObject();
-            newResult["hobbies"] = new JsonArray()[3];
+           // newResult["hobbies"] = new JsonArray()[3];
             if (results.name.first != na && results.name.first != dash && results.name.first != null1)
             {
                 newResult["name"]!["first"] = results.name.first;
@@ -85,7 +85,7 @@ namespace CodingTasks.JsonCleansing
             forecastObject["Date"] = new DateTime(2019, 8, 3);
 
             var options = new JsonSerializerOptions { WriteIndented = true };
-            Console.WriteLine(forecastObject.ToJsonString(options));
+            Console.WriteLine(newResult.ToJsonString(options));
             return "";
         }
     }

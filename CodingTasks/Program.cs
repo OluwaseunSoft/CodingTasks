@@ -2,12 +2,13 @@
 using CodingTasks.AlphabetPositionString;
 using CodingTasks.BinaryOutput;
 using CodingTasks.FindTheMaxInt;
+using CodingTasks.JsonCleansing;
 using CodingTasks.OrderOfStringsAndNumbers;
 using CodingTasks.ScoreRecordWithRules;
 using CodingTasks.SplitStringIntoEqualChunks;
 using CodingTasks.SumEvenNumbersFromIntArray;
 
-int[] numbers = new int[] { 23, 22, 67, 89, 9, 76, 66 };
+//int[] numbers = new int[] { 23, 22, 67, 89, 9, 76, 66 };
 //Console.WriteLine("Sum of the even numbers in the array is : {0}", SumEvenNumbersFromIntArray.SumEven(numbers).ToString());
 
 //FindTheMaxSum.MaxInt(15, 5);
@@ -24,9 +25,10 @@ int[] numbers = new int[] { 23, 22, 67, 89, 9, 76, 66 };
 //var tokens = BinaryOutput.BinaryFigure(7);
 //Console.WriteLine(String.Join(",", tokens));
 
+//string s = "red2 blue5 black4 green1 gold3";
+//Console.WriteLine("{0}", OrderOfStringsAndNumbers.OrderOfStrings(s));
 
-string s = "red2 blue5 black4 green1 gold3";
-Console.WriteLine("{0}", OrderOfStringsAndNumbers.OrderOfStrings(s));
+Console.WriteLine("Cleansed Json Task From https://coderbyte.com/api/challenges/json/json-cleaning : {0}", JsonCleansing.CleansedJson());
 
 
 
