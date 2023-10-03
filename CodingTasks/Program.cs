@@ -28,4 +28,4 @@ using CodingTasks.SumEvenNumbersFromIntArray;
 //string s = "red2 blue5 black4 green1 gold3";
 //Console.WriteLine("{0}", OrderOfStringsAndNumbers.OrderOfStrings(s));
 
-JsonCleansing.CleansedJson();
+JsonCleansing.CleansedJson();//
