@@ -7,6 +7,7 @@ using CodingTasks.OrderOfStringsAndNumbers;
 using CodingTasks.ScoreRecordWithRules;
 using CodingTasks.SplitStringIntoEqualChunks;
 using CodingTasks.SumEvenNumbersFromIntArray;
+using CodingTasks.UtilitySnippets;
 
 //int[] numbers = new int[] { 23, 22, 67, 89, 9, 76, 66 };
 //Console.WriteLine("Sum of the even numbers in the array is : {0}", SumEvenNumbersFromIntArray.SumEven(numbers).ToString());
@@ -28,4 +29,6 @@ using CodingTasks.SumEvenNumbersFromIntArray;
 //string s = "red2 blue5 black4 green1 gold3";
 //Console.WriteLine("{0}", OrderOfStringsAndNumbers.OrderOfStrings(s));
 
-JsonCleansing.CleansedJson();//
+//JsonCleansing.CleansedJson();
+
+UtilitySnippets.TestM();

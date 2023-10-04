@@ -1,4 +1,5 @@
 using BasicWordCompletion.Models;
+using System.ComponentModel.DataAnnotations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -49,9 +50,23 @@ app.MapGet("/GetWord", async (string stem, IHttpClientFactory httpClientFactory)
 
 });
 
+//app.MapPost("/TestMethods", (DateTimeProp dt) =>
+//{
+//    if(ModelState.IsValid)
+//    Console.WriteLine(DateTimeProp.StartDate);
+
+//});
+
 app.Run();
 
 partial class Program
 {
     static string[]? summaries;
+}
+
+public class DateTimeProp
+{
+    [Required]
+    [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
+    public static string? StartDate { get; set; }
 }

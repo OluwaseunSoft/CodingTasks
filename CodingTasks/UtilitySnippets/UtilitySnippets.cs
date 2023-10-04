@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,10 +9,16 @@ namespace CodingTasks.UtilitySnippets
 {
     internal class UtilitySnippets
     {
+        public static void TestM()
+        {            
+            Console.WriteLine(DateTimeProp.StartDate);
+        }
     }
 
-    public class DateTimeProp
+    public static class DateTimeProp
     {
-        public string StartDate { get; set; }
+        [Required]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
+        public static string? StartDate { get; set; }
     }
 }
