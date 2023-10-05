@@ -32,4 +32,4 @@ using CodingTasks.UtilitySnippets;
 
 //JsonCleansing.CleansedJson();
 
-PositiveNegativeZeroArray.PositiveNegativeZeroArrayMethod(new int[] { -9, 0, 8, 6, -4 });
+PositiveNegativeZeroArray.PositiveNegativeZeroArrayMethod(new int[] { -9, 0, 8, 6, -4, 0 });
