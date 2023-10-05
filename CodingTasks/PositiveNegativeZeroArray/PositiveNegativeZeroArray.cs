@@ -8,9 +8,11 @@ namespace CodingTasks.PositiveNegativeZeroArray
 {
     internal class PositiveNegativeZeroArray
     {
-        public void PositiveNegativeZeroArrayMethod(int[] arr)
+        public static void PositiveNegativeZeroArrayMethod(int[] arr)
         {
-
+            var zero = arr.Where(x => x == 0).Count();
+            var nega = arr.Where(x => x < 0).Count();
+            var posi = arr.Where(x => x > 0).Count();
         }
     }
 }

@@ -4,6 +4,7 @@ using CodingTasks.BinaryOutput;
 using CodingTasks.FindTheMaxInt;
 using CodingTasks.JsonCleansing;
 using CodingTasks.OrderOfStringsAndNumbers;
+using CodingTasks.PositiveNegativeZeroArray;
 using CodingTasks.ScoreRecordWithRules;
 using CodingTasks.SplitStringIntoEqualChunks;
 using CodingTasks.SumEvenNumbersFromIntArray;
@@ -31,4 +32,4 @@ using CodingTasks.UtilitySnippets;
 
 //JsonCleansing.CleansedJson();
 
-UtilitySnippets.TestM();
+PositiveNegativeZeroArray.PositiveNegativeZeroArrayMethod(new int[] { -9, 0, 8, 6, -4 });
