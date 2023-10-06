@@ -12,7 +12,7 @@ namespace CodingTasks.PositiveNegativeZeroArray
         {
             Console.WriteLine("{0}", ((decimal)arr.Where(x => x == 0).Count() / (decimal)arr.Length).ToString("N6"));
             Console.WriteLine("{0}", ((decimal)arr.Where(x => x < 0).Count() / (decimal)arr.Length).ToString("N6"));
-            Console.WriteLine("{0}", ((decimal)arr.Where(x => x > 0).Count() / (decimal)arr.Length).ToString("N6"));            
+            Console.WriteLine("{0}", ((decimal)arr.Where(x => x > 0).Count() / (decimal)arr.Length).ToString("N6"));
         }
     }
 }
