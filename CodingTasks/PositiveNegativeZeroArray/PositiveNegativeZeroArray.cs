@@ -8,11 +8,11 @@ namespace CodingTasks.PositiveNegativeZeroArray
 {
     internal class PositiveNegativeZeroArray
     {
-        public static void PositiveNegativeZeroArrayMethod(int[] arr)
+        public static void PositiveNegativeZeroArrayMethod(List<int> arr)
         {
-            Console.WriteLine("{0}", ((decimal)arr.Where(x => x == 0).Count() / (decimal)arr.Length).ToString("N6"));
-            Console.WriteLine("{0}", ((decimal)arr.Where(x => x < 0).Count() / (decimal)arr.Length).ToString("N6"));
-            Console.WriteLine("{0}", ((decimal)arr.Where(x => x > 0).Count() / (decimal)arr.Length).ToString("N6"));
+            Console.WriteLine("{0}", ((decimal)arr.Where(x => x == 0).Count() / (decimal)arr.Count).ToString("N6"));
+            Console.WriteLine("{0}", ((decimal)arr.Where(x => x < 0).Count() / (decimal)arr.Count).ToString("N6"));
+            Console.WriteLine("{0}", ((decimal)arr.Where(x => x > 0).Count() / (decimal)arr.Count).ToString("N6"));
         }
     }
 }
