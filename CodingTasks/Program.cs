@@ -35,4 +35,4 @@ using CodingTasks.UtilitySnippets;
 
 //PositiveNegativeZeroArray.PositiveNegativeZeroArrayMethod(new List<int> { -9, 0, 8, 6, -4 , -8});
 
-MiniMaxSum.MiniMaxSumFunction(new int[] { 23, 22, 67, 89, 9, 76, 66 });
+MiniMaxSum.MiniMaxSumFunction(new int[] { 1, 2, 3, 4, 5 });
