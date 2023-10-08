@@ -10,14 +10,14 @@ namespace CodingTasks.MiniMaxSum
     {
         public static void MiniMaxSumFunction(int[] arr)
         {
-            for(int i = 0; i < arr.Length; i++)
-            {
+            List<Int64> sums = new List<Int64>();
 
-            }
-            foreach (var item in arr)
+            for (int i = 0; i < arr.Length; i++)
             {
-
+                Int64 num = arr.ToList().Sum() - arr[i];
+                sums.Add(num);
             }
+            Console.WriteLine($"{sums.Min()} {sums.Max()}");
         }
     }
 }

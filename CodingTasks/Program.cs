@@ -3,6 +3,7 @@ using CodingTasks.AlphabetPositionString;
 using CodingTasks.BinaryOutput;
 using CodingTasks.FindTheMaxInt;
 using CodingTasks.JsonCleansing;
+using CodingTasks.MiniMaxSum;
 using CodingTasks.OrderOfStringsAndNumbers;
 using CodingTasks.PositiveNegativeZeroArray;
 using CodingTasks.ScoreRecordWithRules;
@@ -32,4 +33,6 @@ using CodingTasks.UtilitySnippets;
 
 //JsonCleansing.CleansedJson();
 
-PositiveNegativeZeroArray.PositiveNegativeZeroArrayMethod(new List<int> { -9, 0, 8, 6, -4 , -8});
+//PositiveNegativeZeroArray.PositiveNegativeZeroArrayMethod(new List<int> { -9, 0, 8, 6, -4 , -8});
+
+MiniMaxSum.MiniMaxSumFunction(new int[] { 23, 22, 67, 89, 9, 76, 66 });
