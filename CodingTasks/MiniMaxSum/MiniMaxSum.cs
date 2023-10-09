@@ -10,11 +10,11 @@ namespace CodingTasks.MiniMaxSum
     {
         public static void MiniMaxSumFunction(List<int> arr)
         {
-            List<Int64> sums = new List<Int64>();
-
+            List<ulong> sums = new List<ulong>();
             foreach (var item in arr)
             {
-                sums.Add(arr.ToList().Sum() - item);
+                ulong sum = arr.Select(i => (ulong)i).Aggregate((a, b) => a + b);
+                sums.Add(sum - (ulong)item);
             }
             Console.WriteLine($"{sums.Min()} {sums.Max()}");
         }
