@@ -8,13 +8,13 @@ namespace CodingTasks.MiniMaxSum
 {
     internal class MiniMaxSum
     {
-        public static void MiniMaxSumFunction(int[] arr)
+        public static void MiniMaxSumFunction(List<int> arr)
         {
             List<Int64> sums = new List<Int64>();
 
-            for (int i = 0; i < arr.Length; i++)
+            foreach (var item in arr)
             {
-                sums.Add(arr.ToList().Sum() - arr[i]);
+                sums.Add(arr.ToList().Sum() - item);
             }
             Console.WriteLine($"{sums.Min()} {sums.Max()}");
         }
