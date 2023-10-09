@@ -14,9 +14,10 @@ namespace CodingTasks.MiniMaxSum
 
             for (int i = 0; i < arr.Length; i++)
             {
-                Int64 num = arr.ToList().Sum() - arr[i];
-                sums.Add(num);
+                sums.Add(arr.ToList().Sum() - arr[i]);
             }
+
+
             Console.WriteLine($"{sums.Min()} {sums.Max()}");
         }
     }
