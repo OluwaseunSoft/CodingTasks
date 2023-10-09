@@ -16,8 +16,6 @@ namespace CodingTasks.MiniMaxSum
             {
                 sums.Add(arr.ToList().Sum() - arr[i]);
             }
-
-
             Console.WriteLine($"{sums.Min()} {sums.Max()}");
         }
     }
