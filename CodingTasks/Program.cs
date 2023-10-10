@@ -20,7 +20,7 @@ using CodingTasks.UtilitySnippets;
 
 //var tokens = SplitStringIntoEqualChunks.ChunkMethod("abcde", 2);
 
-//Console.WriteLine(String.Join(",", tokens));
+//Console.WriteLine(String.Join(",", tokens));/
 
 //List<string> ops = new List<string> { "5", "2", "C", "D", "+" };
 //Console.WriteLine(ScoreRecordWithRules.SumScore(ops).ToString());
