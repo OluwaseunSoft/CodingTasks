@@ -1,5 +1,7 @@
 using BasicWordCompletion.Models;
 using System.ComponentModel.DataAnnotations;
+using System.Net;
+using System.Net.Http.Headers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -50,12 +52,16 @@ app.MapGet("/GetWord", async (string stem, IHttpClientFactory httpClientFactory)
 
 });
 
-//app.MapPost("/TestMethods", (DateTimeProp dt) =>
-//{
-//    if(ModelState.IsValid)
-//    Console.WriteLine(DateTimeProp.StartDate);
+app.MapGet("/TestMethods",() =>
+{
+    HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.OK);
+    FileStream fileStream = File.OpenRead("oluwaseun.pdf");
+    response.Content = new StreamContent(fileStream);
+    response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/pdf");
 
-//});
+    return response;
+
+});
 
 app.Run();
 
