@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
+using System.IO;
 
 namespace GetPDFFileFromAPI.Controllers
 {
@@ -28,6 +30,26 @@ namespace GetPDFFileFromAPI.Controllers
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        [HttpGet]
+        [Route("/GetPDF")]
+        public HttpResponseMessage GetBookForHRM()
+        {
+            string reqBook = "oluwaseun.pdf";
+            string bookName = "sample." + "pdf";
+            //converting Pdf file into bytes array
+            var dataBytes = System.IO.File.ReadAllBytes(reqBook);
+            //adding bytes to memory stream
+            var dataStream = new MemoryStream(dataBytes);
+
+            HttpResponseMessage httpResponseMessage = new HttpResponseMessage(HttpStatusCode.OK);
+            httpResponseMessage.Content = new StreamContent(dataStream);
+            httpResponseMessage.Content.Headers.ContentDisposition = new System.Net.Http.Headers.ContentDispositionHeaderValue("attachment");
+            httpResponseMessage.Content.Headers.ContentDisposition.FileName = bookName;
+            httpResponseMessage.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/octet-stream");
+
+            return httpResponseMessage;
         }
     }
 }

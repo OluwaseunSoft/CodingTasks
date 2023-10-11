@@ -5,7 +5,9 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingTasks", "CodingTasks\CodingTasks.csproj", "{53F38A1C-BA33-48A5-8E83-61250CD1BA9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicWordCompletion", "BasicWordCompletion\BasicWordCompletion.csproj", "{D316C399-2304-4C9D-A800-9FF31FD20961}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicWordCompletion", "BasicWordCompletion\BasicWordCompletion.csproj", "{D316C399-2304-4C9D-A800-9FF31FD20961}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetPDFFileFromAPI", "GetPDFFileFromAPI\GetPDFFileFromAPI.csproj", "{239BF9D3-8F1E-4AA9-842C-B2769914DD3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{D316C399-2304-4C9D-A800-9FF31FD20961}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D316C399-2304-4C9D-A800-9FF31FD20961}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D316C399-2304-4C9D-A800-9FF31FD20961}.Release|Any CPU.Build.0 = Release|Any CPU
+		{239BF9D3-8F1E-4AA9-842C-B2769914DD3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{239BF9D3-8F1E-4AA9-842C-B2769914DD3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{239BF9D3-8F1E-4AA9-842C-B2769914DD3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{239BF9D3-8F1E-4AA9-842C-B2769914DD3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
