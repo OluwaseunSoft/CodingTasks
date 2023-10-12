@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Net;
-using System.IO;
-using System.Web.Http;
+using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
+using HttpGetAttribute = Microsoft.AspNetCore.Mvc.HttpGetAttribute;
 
 namespace GetPDFFileFromAPI.Controllers
 {
@@ -31,18 +30,6 @@ namespace GetPDFFileFromAPI.Controllers
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
-        }
-
-        [System.Web.Http.HttpGet]
-        [System.Web.Http.Route("/GetPDF")]
-        public IHttpActionResult GetBookForHRM()
-        {
-            string reqBook = "oluwaseun.pdf";
-            string path = Path.GetFullPath(reqBook);
-
-            HttpResponseMessage responseMsg = new HttpResponseMessage(HttpStatusCode.OK);
-            responseMsg.Content = new StreamContent(new FileStream(path, FileMode.Open, FileAccess.Read));
-            return ResponseMessage(responseMsg);
-        }
+        }        
     }
 }
