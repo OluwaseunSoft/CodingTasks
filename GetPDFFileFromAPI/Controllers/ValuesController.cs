@@ -9,8 +9,8 @@ namespace GetPDFFileFromAPI.Controllers
     public class ValuesController : ControllerBase
     {
         [HttpGet]
-        [Route("Stream")]
-        public async Task<IActionResult> DownloadPdfFile(string id)
+        [Route("DownloadPdfFile")]
+        public async Task<IActionResult> DownloadPdfFile()
         {
             string reqBook = "oluwaseun.pdf";
             string filePath = Path.GetFullPath(reqBook);
