@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using System.IO;
+using System.Web.Http;
 
 namespace GetPDFFileFromAPI.Controllers
 {
@@ -32,24 +33,16 @@ namespace GetPDFFileFromAPI.Controllers
             .ToArray();
         }
 
-        [HttpGet]
-        [Route("/GetPDF")]
-        public HttpResponseMessage GetBookForHRM()
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.Route("/GetPDF")]
+        public IHttpActionResult GetBookForHRM()
         {
             string reqBook = "oluwaseun.pdf";
-            string bookName = "sample." + "pdf";
-            //converting Pdf file into bytes array
-            var dataBytes = System.IO.File.ReadAllBytes(reqBook);
-            //adding bytes to memory stream
-            var dataStream = new MemoryStream(dataBytes);
+            string path = Path.GetFullPath(reqBook);
 
-            HttpResponseMessage httpResponseMessage = new HttpResponseMessage(HttpStatusCode.OK);
-            httpResponseMessage.Content = new StreamContent(dataStream);
-            httpResponseMessage.Content.Headers.ContentDisposition = new System.Net.Http.Headers.ContentDispositionHeaderValue("attachment");
-            httpResponseMessage.Content.Headers.ContentDisposition.FileName = bookName;
-            httpResponseMessage.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/octet-stream");
-
-            return httpResponseMessage;
+            HttpResponseMessage responseMsg = new HttpResponseMessage(HttpStatusCode.OK);
+            responseMsg.Content = new StreamContent(new FileStream(path, FileMode.Open, FileAccess.Read));
+            return ResponseMessage(responseMsg);
         }
     }
 }
