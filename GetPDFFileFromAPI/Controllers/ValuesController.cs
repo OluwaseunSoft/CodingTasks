@@ -12,7 +12,7 @@ namespace GetPDFFileFromAPI.Controllers
         [Route("DownloadPdfFile")]
         public async Task<IActionResult> DownloadPdfFile()
         {
-            string reqBook = "oluwaseun.pdf";
+            string reqBook = "iisstart.htm";
             string filePath = Path.GetFullPath(reqBook);
             HttpResponseMessage responseMsg = new HttpResponseMessage(HttpStatusCode.OK);
             responseMsg.Content = new StreamContent(new FileStream(filePath, FileMode.Open, FileAccess.Read));
