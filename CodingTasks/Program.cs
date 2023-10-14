@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using CodingTasks.AlphabetPositionString;
 using CodingTasks.BinaryOutput;
+using CodingTasks.ConvertHTMLStringToPDF;
 using CodingTasks.FindTheMaxInt;
 using CodingTasks.JsonCleansing;
 using CodingTasks.MiniMaxSum;
@@ -35,4 +36,6 @@ using CodingTasks.UtilitySnippets;
 
 //PositiveNegativeZeroArray.PositiveNegativeZeroArrayMethod(new List<int> { -9, 0, 8, 6, -4 , -8});
 
-MiniMaxSum.MiniMaxSumFunction(new List<int> { 256741038, 623958417, 467905213, 714532089, 938071625 });
+//MiniMaxSum.MiniMaxSumFunction(new List<int> { 256741038, 623958417, 467905213, 714532089, 938071625 });
+
+ConvertHTMLStringToPDF.ConvertHTML2PDF();
