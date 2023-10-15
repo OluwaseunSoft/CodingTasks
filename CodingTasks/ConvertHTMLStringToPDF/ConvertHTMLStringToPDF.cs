@@ -11,14 +11,14 @@ using System.Threading.Tasks;
 
 namespace CodingTasks.ConvertHTMLStringToPDF
 {
-    internal class ConvertHTMLStringToPDF
+    public class ConvertHTMLStringToPDF
     {
-        public static void ConvertHTML2PDF()
+        public static void ConvertHTML2PDF(string pathToHTML)
         {
             try
             {
-                string testHtmlFile = "test12.html";
-                string filePath = Path.GetFullPath(testHtmlFile);
+                //string testHtmlFile = "test12.html";
+                string filePath = Path.GetFullPath(pathToHTML);
                 string htmlString = File.ReadAllText(filePath);
 
                 string fileName = "convertedPDF.pdf";
