@@ -13,7 +13,7 @@ namespace CodingTasks.ConvertHTMLStringToPDF
 {
     public class ConvertHTMLStringToPDF
     {
-        public static void ConvertHTML2PDF(string pathToHTML)
+        public static string ConvertHTML2PDF(string pathToHTML)
         {
             try
             {
@@ -28,11 +28,13 @@ namespace CodingTasks.ConvertHTMLStringToPDF
                 HtmlConverter.PluginPath = pluginPath;
 
                 HtmlConverter.Convert(htmlString, fileName, true, 1000000, new Size(1080, 1000), new PdfMargins(0), LoadHtmlType.SourceCode);
+                return fileName;
 
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
+                return "";
             }
         }
     }

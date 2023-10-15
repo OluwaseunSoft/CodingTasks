@@ -38,4 +38,4 @@ using CodingTasks.UtilitySnippets;
 
 //MiniMaxSum.MiniMaxSumFunction(new List<int> { 256741038, 623958417, 467905213, 714532089, 938071625 });
 
-ConvertHTMLStringToPDF.ConvertHTML2PDF();
+ConvertHTMLStringToPDF.ConvertHTML2PDF("test12.html");
