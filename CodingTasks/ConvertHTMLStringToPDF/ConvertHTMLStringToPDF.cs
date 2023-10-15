@@ -28,7 +28,7 @@ namespace CodingTasks.ConvertHTMLStringToPDF
                 HtmlConverter.PluginPath = pluginPath;
 
                 HtmlConverter.Convert(htmlString, fileName, true, 1000000, new Size(1080, 1000), new PdfMargins(0), LoadHtmlType.SourceCode);
-                return Path.GetFullPath(fileName);
+                return fileName;
 
             }
             catch (Exception ex)
