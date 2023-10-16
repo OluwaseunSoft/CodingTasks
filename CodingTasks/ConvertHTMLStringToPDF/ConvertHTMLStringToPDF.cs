@@ -13,6 +13,10 @@ namespace CodingTasks.ConvertHTMLStringToPDF
 {
     public class ConvertHTMLStringToPDF
     {
+        public ConvertHTMLStringToPDF()
+        {
+
+        }
         public static string ConvertHTML2PDF(string pathToHTML)
         {
             try
