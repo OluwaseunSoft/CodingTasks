@@ -13,7 +13,7 @@ namespace CodingTasks.ConvertHTMLStringToPDF
 {
     public class ConvertHTMLStringToPDF
     {
-        public ConvertHTMLStringToPDF()
+        public ConvertHTMLStringToPDF( )
         {
 
         }
