@@ -13,16 +13,24 @@ namespace GetPDFFileFromAPI.Controllers
         [Route("DownloadPdfFile")]
         public async Task<IActionResult> DownloadPdfFile()
         {
-            string reqBook = "test12.html";
-            var pathToHtml = ConvertHTMLStringToPDF.ConvertHTML2PDF(reqBook);
-            string filePath = Path.GetFullPath(pathToHtml);            
-            HttpResponseMessage responseMsg = new HttpResponseMessage(HttpStatusCode.OK);
-            responseMsg.Content = new StreamContent(new FileStream(filePath, FileMode.Open, FileAccess.Read));
-            string mimeType = "application/pdf";
-            return new FileStreamResult(responseMsg.Content.ReadAsStream(), mimeType)
+            try
             {
-                FileDownloadName = "FileasStream.pdf"
-            };
+                string reqBook = "wwwroot\\test12.html";
+                var pathToHtml = ConvertHTMLStringToPDF.ConvertHTML2PDF(Path.GetFullPath(reqBook));
+                string filePath = Path.GetFullPath(pathToHtml);
+                HttpResponseMessage responseMsg = new HttpResponseMessage(HttpStatusCode.OK);
+                responseMsg.Content = new StreamContent(new FileStream(filePath, FileMode.Open, FileAccess.Read));
+                string mimeType = "application/pdf";
+                return new FileStreamResult(responseMsg.Content.ReadAsStream(), mimeType)
+                {
+                    FileDownloadName = "FileasStream.pdf"
+                };
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return new NotFoundResult();
+            }
         }
     }
 }
