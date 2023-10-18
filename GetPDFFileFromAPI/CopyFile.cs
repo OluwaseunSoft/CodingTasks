@@ -8,12 +8,12 @@
             {
                 Random rnd = new Random();
                 int dice = rnd.Next(1, 1000);
-                if (!File.Exists(Path.Combine("wwwroot\\", dice.ToString(), Path.GetFileName(old))))
+                if (!File.Exists(Path.Combine("wwwroot\\", dice.ToString() + Path.GetFileName(old))))
                 {
-                    File.Copy(old, Path.Combine("wwwroot\\", dice.ToString(), Path.GetFileName(old)));
+                    File.Copy(old, Path.Combine("wwwroot\\", dice.ToString() + Path.GetFileName(old)));
                 }
 
-                return Path.Combine("wwwroot\\", dice.ToString(), Path.GetFileName(old));
+                return Path.Combine("wwwroot\\", dice.ToString() + Path.GetFileName(old));
             }
             catch (Exception ex)
             {
