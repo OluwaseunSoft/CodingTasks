@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
+using System.IO;
 
 namespace GetPDFFileFromAPI.Controllers
 {
@@ -17,7 +18,9 @@ namespace GetPDFFileFromAPI.Controllers
             {
                 string reqBook = "wwwroot\\test12.html";
                 var pathToHtml = ConvertHTMLStringToPDF.ConvertHTML2PDF(Path.GetFullPath(reqBook));
-                string filePath = Path.GetFullPath(pathToHtml);
+                var t = AppDomain.CurrentDomain.BaseDirectory + pathToHtml;
+                var u = CopyFile.CopyFileToDirectory(t);
+                string filePath = Path.GetFullPath(u);
                 HttpResponseMessage responseMsg = new HttpResponseMessage(HttpStatusCode.OK);
                 responseMsg.Content = new StreamContent(new FileStream(filePath, FileMode.Open, FileAccess.Read));
                 string mimeType = "application/pdf";
