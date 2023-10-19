@@ -39,7 +39,7 @@ namespace CodingTasks.ConvertHTMLStringToPDF
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                return "";
+                return "error";
             }
         }
     }
