@@ -10,7 +10,7 @@ namespace GetPDFFileFromAPI.Controllers
     {
         private static readonly string[] Summaries = new[]
         {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching","Foggy"
     };
 
         private readonly ILogger<WeatherForecastController> _logger;
@@ -30,6 +30,6 @@ namespace GetPDFFileFromAPI.Controllers
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
-        }        
+        }
     }
 }
