@@ -13,7 +13,7 @@ namespace CodingTasks.ConvertHTMLStringToPDF
 {
     public class ConvertHTMLStringToPDF
     {
-        public ConvertHTMLStringToPDF( )
+        public ConvertHTMLStringToPDF()
         {
 
         }
@@ -32,7 +32,7 @@ namespace CodingTasks.ConvertHTMLStringToPDF
                 HtmlConverter.PluginPath = pluginPath;
 
                 HtmlConverter.Convert(htmlString, fileName, true, 1000000, new Size(1080, 1000), new PdfMargins(0), LoadHtmlType.SourceCode);
-                
+
                 return fileName;
 
             }
