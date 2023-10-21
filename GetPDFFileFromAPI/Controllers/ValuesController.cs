@@ -26,7 +26,7 @@ namespace GetPDFFileFromAPI.Controllers
                 string mimeType = "application/pdf";
                 return new FileStreamResult(responseMsg.Content.ReadAsStream(), mimeType)
                 {
-                    FileDownloadName = "FileasStream.pdf"
+                    FileDownloadName = "newfile.pdf"
                 };
             }
             catch (Exception ex)
