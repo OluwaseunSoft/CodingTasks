@@ -11,7 +11,7 @@ namespace GetPDFFileFromAPI.Controllers
     public class ValuesController : ControllerBase
     {
         [HttpGet]
-        [Route("DownloadPdfFile")]
+        [Route("ToDownloadPdfFile")]
         public async Task<IActionResult> DownloadPdfFile()
         {
             try
