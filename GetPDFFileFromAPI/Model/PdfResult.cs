@@ -23,7 +23,7 @@ namespace GetPDFFileFromAPI.Model
             //httpResponseMessage.Content = new ByteArrayContent(PdfStuff.ToArray());
             httpResponseMessage.Content.Headers.ContentDisposition = new System.Net.Http.Headers.ContentDispositionHeaderValue("attachment");
             httpResponseMessage.Content.Headers.ContentDisposition.FileName = PdfFileName;
-            httpResponseMessage.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/octet-stream"); // application/pdf
+            httpResponseMessage.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/octet-stream"); 
             return System.Threading.Tasks.Task.FromResult(httpResponseMessage);
         }
     }
