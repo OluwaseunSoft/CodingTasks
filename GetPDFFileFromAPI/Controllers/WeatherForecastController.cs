@@ -10,7 +10,7 @@ namespace GetPDFFileFromAPI.Controllers
     {
         private static readonly string[] Summaries = new[]
         {
-         "Hot", "Sweltering", "Scorching","Foggy"
+         "Hot", "Scorching","Foggy"
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
