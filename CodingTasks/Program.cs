@@ -10,6 +10,7 @@ using CodingTasks.PositiveNegativeZeroArray;
 using CodingTasks.ScoreRecordWithRules;
 using CodingTasks.SplitStringIntoEqualChunks;
 using CodingTasks.SumEvenNumbersFromIntArray;
+using CodingTasks.TimeConversionTo24Hours;
 using CodingTasks.UtilitySnippets;
 
 //int[] numbers = new int[] { 23, 22, 67, 89, 9, 76, 66 };
@@ -38,4 +39,6 @@ using CodingTasks.UtilitySnippets;
 
 //MiniMaxSum.MiniMaxSumFunction(new List<int> { 256741038, 623958417, 467905213, 714532089, 938071625 });
 
-ConvertHTMLStringToPDF.ConvertHTML2PDF("test12.html");
+//ConvertHTMLStringToPDF.ConvertHTML2PDF("test12.html");
+
+Console.WriteLine("{0}", TimeConversionTo24Hours.TimeConversion("07:45:00PM"));

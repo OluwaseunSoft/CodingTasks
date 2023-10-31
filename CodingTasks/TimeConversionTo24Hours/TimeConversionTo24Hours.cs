@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace CodingTasks.TimeConversionTo24Hours
 {
-    public class TimeConversionTo24Hours
+    public static class TimeConversionTo24Hours
     {
-        public string TimeConversion(string time)
+        public static string TimeConversion(string time)
         {
-            return time;
+            var d = DateTime.Parse(time);
+
+            return d.ToString("HH:mm:ss");
         }
     }
 }
