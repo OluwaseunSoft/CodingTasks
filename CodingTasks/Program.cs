@@ -41,4 +41,4 @@ using CodingTasks.UtilitySnippets;
 
 //ConvertHTMLStringToPDF.ConvertHTML2PDF("test12.html");
 
-Console.WriteLine("{0}", TimeConversionTo24Hours.TimeConversion("12:01:40AM"));
+Console.WriteLine("{0}", TimeConversionTo24Hours.TimeConversion("05:01:40AM"));
