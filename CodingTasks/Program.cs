@@ -2,6 +2,7 @@
 using CodingTasks.AlphabetPositionString;
 using CodingTasks.BinaryOutput;
 using CodingTasks.ConvertHTMLStringToPDF;
+using CodingTasks.DownloadFromUrl;
 using CodingTasks.FindTheMaxInt;
 using CodingTasks.JsonCleansing;
 using CodingTasks.MiniMaxSum;
@@ -41,4 +42,6 @@ using CodingTasks.UtilitySnippets;
 
 //ConvertHTMLStringToPDF.ConvertHTML2PDF("test12.html");
 
-Console.WriteLine("Conversion: {0}", TimeConversionTo24Hours.TimeConversion("05:01:40AM"));
+//Console.WriteLine("Conversion: {0}", TimeConversionTo24Hours.TimeConversion("05:01:40AM"));
+
+DownloadFromUrl.SaveContentFromUrl();
