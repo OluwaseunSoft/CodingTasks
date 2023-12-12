@@ -37,7 +37,7 @@ namespace GetPDFFileFromAPI.Controllers
         }
 
         [HttpGet("F1")]
-        public async Task<FileContentResult> GetFile()
+        public async Task<IActionResult> GetFile()
         {
             string localFilePath = "wwwroot\\296convertedPDF.pdf";
             string filePath = Path.GetFullPath(localFilePath);
