@@ -35,5 +35,51 @@ namespace GetPDFFileFromAPI.Controllers
                 return new NotFoundResult();
             }
         }
+
+        [HttpGet("F1")]
+        public async Task<FileContentResult> GetFile()
+        {
+            string localFilePath = "wwwroot\\296convertedPDF.pdf";
+            string filePath = Path.GetFullPath(localFilePath);
+            var bytes = await System.IO.File.ReadAllBytesAsync(filePath).ConfigureAwait(false);
+            return File(bytes, "application/pdf", Path.GetFileName(filePath));
+        }
+
+        [HttpGet("F2")]
+        public async Task<PhysicalFileResult> GetFilePhysicalPath()
+        {
+            string localFilePath = "wwwroot\\296convertedPDF.pdf";
+            string filePath = Path.GetFullPath(localFilePath);
+            var bytes = await System.IO.File.ReadAllBytesAsync(filePath).ConfigureAwait(false);
+            return new PhysicalFileResult(filePath, "application/pdf");
+        }
+
+        [HttpGet("F3")]
+        public async Task<FileResult> GetFileVirtual()
+        {
+            try
+            {
+                return new VirtualFileResult("/Files/convertedPDF.pdf", "application/pdf");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw new Exception();
+            }
+        }
+
+        [HttpGet("F4")]
+        public async Task<FileResult> GetFileVirtual()
+        {
+            try
+            {
+                return new VirtualFileResult("/Files/convertedPDF.pdf", "application/pdf");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw new Exception();
+            }
+        }
     }
 }

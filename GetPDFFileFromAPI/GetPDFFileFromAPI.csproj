@@ -16,8 +16,4 @@
     <ProjectReference Include="..\CodingTasks\CodingTasks.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\" />
-  </ItemGroup>
-
 </Project>
