@@ -69,11 +69,11 @@ namespace GetPDFFileFromAPI.Controllers
         }
 
         [HttpGet("F4")]
-        public async Task<FileResult> GetFileVirtual()
+        public async Task<FileResult> GetFileResult()
         {
             try
             {
-                return new VirtualFileResult("/Files/convertedPDF.pdf", "application/pdf");
+                return File("/Files/convertedPDF.pdf", "application/pdf", "result.pdf");
             }
             catch (Exception ex)
             {
